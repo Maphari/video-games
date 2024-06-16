@@ -1,21 +1,23 @@
-import logging
 import pandas as pd
 from pandas import DataFrame
-from globals.globals import logger
+from globals.globals import log_process, LOGGING_ERROR_FUNCTION, LOGGING_ERROR
 
-logger(logging.ERROR)
 
 def read_games_data(file_to_process: str) -> DataFrame:
     try:
         games_df: DataFrame = pd.read_csv(file_to_process)
     except FileNotFoundError as e:
-        logging.error(f'File not found: {e}')
+        log_process(f'File not found: {e}', LOGGING_ERROR,
+                    LOGGING_ERROR_FUNCTION)
     except pd.errors.EmptyDataError as e:
-        logging.error(f'File is empty: {e}')
+        log_process(f'File is empty: {e}', LOGGING_ERROR,
+                    LOGGING_ERROR_FUNCTION)
     except pd.errors.ParserError as e:
-        logging.error(f'File could not be parsed: {e}')
+        log_process(f'File could not be parsed: {e}', LOGGING_ERROR,
+                    LOGGING_ERROR_FUNCTION)
     except Exception as e:
-        logging.error(f'Unexpected exception {e}', exc_info=True)
+        log_process(f'Unexpected exception {e}', LOGGING_ERROR,
+                    LOGGING_ERROR_FUNCTION)
     else:
         return games_df
 

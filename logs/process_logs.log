@@ -1,0 +1,10 @@
+2024-06-16 11:40:28 - Starting Process!!!
+2024-06-16 11:40:28 - Starting Extraction Process!!!
+2024-06-16 11:40:28 - Ending Extraction Process!!!
+2024-06-16 11:40:28 - Starting Transforming Process!!!
+2024-06-16 11:40:28 - Ending Transforming Process!!!
+2024-06-16 11:40:28 - Starting Loading Process!!!
+2024-06-16 11:40:28 - Connection to SQL Server established successfully.
+2024-06-16 11:40:28 - DataFrame written to table games successfully.
+2024-06-16 11:40:28 - Ending Loading Process!!!
+2024-06-16 11:40:28 - Ending Process!!!
