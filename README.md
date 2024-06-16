@@ -39,6 +39,17 @@ The data for this project was sourced from Maven Analytics and is available in C
 
 ## ETL Process
 
+The high-level architecture of the pipeline is as follows:
+
+```
++-----------------+       +-----------------+       +-------------------+
+|                 |       |                 |       |                   |
+| Mavinanalytics  +------>+   ETL Process   +------>+   Transformed     |
+|   (CSV)         |       |  (Clean Data)   |       |   Data (MYSQL)    |
+|                 |       |                 |       |                   |
++-----------------+       +-----------------+       +-------------------+
+```
+
 ### Extraction
 
 The extraction phase involves reading the raw CSV files containing the video game data. This data is loaded into Azure Data Studio for initial examination and basic cleaning.
